@@ -160,6 +160,15 @@
   birthday for them. Like everything else, it is stored only on your device and is
   never transmitted anywhere.</p>
 
+  <p><strong>App Lock (optional, set in Settings).</strong> If you turn this on, Silip
+  asks for a PIN and/or Face ID / Touch ID / fingerprint before it opens. Your PIN is
+  never stored as plain text, only a one-way cryptographic hash of it is kept on your
+  device, and that hash can't be turned back into your PIN. For biometrics, Silip never
+  sees, receives, or stores your actual fingerprint or face data at all: your phone's
+  own operating system handles the scan entirely on its own and only tells Silip "yes"
+  or "no." There's no account behind this feature, so if you forget your PIN, the only
+  way back in is to clear all data on this device (see below).</p>
+
   <p><strong>A few minor technical preferences</strong>, such as your light/dark theme
   choice and the timestamp of your last backup export, are also kept on your device,
   purely so the app can remember your settings between launches. These are not
