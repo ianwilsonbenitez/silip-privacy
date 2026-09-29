@@ -84,7 +84,7 @@
 <body>
 <div class="wrap">
   <h1>Privacy Policy for Silip</h1>
-  <p class="updated">Last updated: September 21, 2026</p>
+  <p class="updated">Last updated: September 30, 2026</p>
 
   <p>Silip is an app that helps you keep track of when your government IDs, professional
   licenses, and business permits expire. It is made by an individual developer, not a
@@ -93,8 +93,8 @@
   <div class="callout">
     <strong>Silip is an independent, personal document-tracking tool. It is not an
     official government app and is not affiliated with, endorsed by, or authorized by
-    any Philippine government agency</strong> (including the DFA, LTO, PRC, NBI, DTI,
-    BIR, or any local government unit). Document type names and agency references in
+    any Philippine government agency</strong> (including the DFA, LTO, PRC, NBI, NCDA,
+    DTI, or any local government unit). Document type names and agency references in
     the app are used only to help you identify what you're tracking.
   </div>
 
@@ -154,9 +154,8 @@
   <p><strong>Your birthday (optional, set in Settings).</strong> If you choose to enter
   your birthday, Silip stores only the <strong>month and day, never the year</strong>,
   since the year isn't needed for anything the app does with it. This is used to
-  suggest a more accurate expiry date for a PRC License or Driver's License that
-  belongs to "Me" specifically (both are, by law, renewed on the licensee's birthday).
-  It is never applied to a Spouse's or Child's documents, since it would be the wrong
+  suggest an expiry date for a PRC License, and to show a renewal note for a Driver's
+  License, that belongs to "Me" specifically. It is never applied to a Spouse's or Child's documents, since it would be the wrong
   birthday for them. Like everything else, it is stored only on your device and is
   never transmitted anywhere.</p>
 
@@ -175,25 +174,30 @@
   personal information and are never transmitted anywhere either.</p>
 
   <h2>Backup files you create yourself</h2>
-  <p>Silip has an <strong>Export backup</strong> feature. When you tap it, the app
-  builds a JSON file containing your document records (the fields listed above,
-  <strong>not your photos</strong>) and hands it to your phone's standard share sheet.
-  From there, <strong>you</strong> decide where it goes: AirDrop, Google Drive, email,
-  the Files app, a messaging app, or anywhere else. Silip does not upload the file,
-  does not choose the destination, and does not keep a copy anywhere outside your
-  device.</p>
+  <p>Silip has an <strong>Export backup</strong> feature. When you tap it, you choose a
+  passphrase, and the app builds an <strong>encrypted</strong> file (AES-256-GCM, using
+  a key derived from that passphrase) containing your document records (the fields
+  listed above, <strong>not your photos</strong>) and hands it to your phone's standard
+  share sheet. From there, <strong>you</strong> decide where it goes: AirDrop, Google
+  Drive, email, the Files app, a messaging app, or anywhere else. Silip does not upload
+  the file, does not choose the destination, does not keep a copy anywhere outside your
+  device, and does not keep a copy of your passphrase either.</p>
 
-  <p>Once that file leaves your phone, it is <strong>an ordinary, unencrypted file
-  under your control</strong>, and whatever privacy rules apply to the place you sent
-  it apply to your data. Please think before you send a backup to a shared drive, a
-  group chat, or an email account other people can read. The file may contain ID
-  numbers you typed into the notes field. The same caution applies to
-  <strong>screenshots</strong> of the app.</p>
+  <p>The file can't be opened without that passphrase, but its strength depends on the
+  passphrase you choose: a long, unusual one protects it far better than a short or
+  guessable one. <strong>If you forget it, that specific backup can't be
+  recovered</strong> &mdash; the same as a forgotten App Lock PIN, there is no account to
+  reset it through. Even though the file is encrypted, please still think before you
+  send it somewhere other people can reach, and be mindful of who else might learn your
+  passphrase. The same caution applies to <strong>screenshots</strong> of the app, which
+  are never encrypted.</p>
 
-  <p><strong>Import</strong> works the other way around: you pick a JSON file using
-  your phone's own file picker, Silip asks you to confirm, and then it replaces the
-  data currently in the app with the contents of that file. The app only ever reads
-  the one file you choose.</p>
+  <p><strong>Import</strong> works the other way around: you pick a backup file using
+  your phone's own file picker. If the file is encrypted, Silip asks for the passphrase
+  before it can read it. Silip then asks you to confirm, and replaces the data currently
+  in the app with the contents of that file. The app only ever reads the one file you
+  choose. Backup files exported before this feature existed are plain, unencrypted JSON,
+  and can still be imported directly.</p>
 
   <h2>Permissions Silip asks for</h2>
   <p>Silip asks for as little as possible, and only at the moment it is actually
